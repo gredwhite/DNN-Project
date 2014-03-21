@@ -10,7 +10,7 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 @Configuration
 // Marks this class as configuration
 // Specifies which package to scan
-@ComponentScan("com.javahash.spring")
+@ComponentScan("com.epam.spring")
 // Enables Spring's annotations
 @EnableWebMvc
 public class Config {
@@ -18,8 +18,7 @@ public class Config {
 	@Bean
 	public UrlBasedViewResolver setupViewResolver() {
 		UrlBasedViewResolver resolver = new UrlBasedViewResolver();
-		//resolver.setPrefix("/WEB-INF/views/");
-		resolver.setPrefix("/WEB-INF/");
+		resolver.setPrefix("/WEB-INF/views/");
 		resolver.setSuffix(".jsp");
 		resolver.setViewClass(JstlView.class);
 		return resolver;

@@ -23,8 +23,8 @@ public class Application {
         new Application(Arrays.asList(args));
     }
 
-    Application(List args) throws Exception {
-        int port = 8080;
+    Application(List<String> args) throws Exception {
+        int port = args.get(0) != null ? Integer.parseInt(args.get(0), 10) : 8080;
         Server server = new Server(port);
 
         WebAppContext webAppContext = new WebAppContext();
